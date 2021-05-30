@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "D:/CLion Projects/AIPO1/Hero.cpp" "D:/CLion Projects/AIPO1/cmake-build-debug/CMakeFiles/AIPO1.dir/Hero.cpp.obj"
+  "D:/CLion Projects/AIPO1/Stats.cpp" "D:/CLion Projects/AIPO1/cmake-build-debug/CMakeFiles/AIPO1.dir/Stats.cpp.obj"
   "D:/CLion Projects/AIPO1/main.cpp" "D:/CLion Projects/AIPO1/cmake-build-debug/CMakeFiles/AIPO1.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")

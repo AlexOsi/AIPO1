@@ -84,6 +84,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/CLion Projects/AIPO1/Hero.cpp">
+			<Option target="AIPO1"/>
+		</Unit>
+		<Unit filename="D:/CLion Projects/AIPO1/Hero.h">
+			<Option target="AIPO1"/>
+		</Unit>
+		<Unit filename="D:/CLion Projects/AIPO1/Stats.cpp">
+			<Option target="AIPO1"/>
+		</Unit>
+		<Unit filename="D:/CLion Projects/AIPO1/Stats.h">
+			<Option target="AIPO1"/>
+		</Unit>
 		<Unit filename="D:/CLion Projects/AIPO1/main.cpp">
 			<Option target="AIPO1"/>
 		</Unit>

@@ -127,6 +127,60 @@ AIPO1\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\build
 .PHONY : AIPO1\fast
 
+Hero.obj: Hero.cpp.obj
+
+.PHONY : Hero.obj
+
+# target to build an object file
+Hero.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Hero.cpp.obj
+.PHONY : Hero.cpp.obj
+
+Hero.i: Hero.cpp.i
+
+.PHONY : Hero.i
+
+# target to preprocess a source file
+Hero.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Hero.cpp.i
+.PHONY : Hero.cpp.i
+
+Hero.s: Hero.cpp.s
+
+.PHONY : Hero.s
+
+# target to generate assembly for a file
+Hero.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Hero.cpp.s
+.PHONY : Hero.cpp.s
+
+Stats.obj: Stats.cpp.obj
+
+.PHONY : Stats.obj
+
+# target to build an object file
+Stats.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Stats.cpp.obj
+.PHONY : Stats.cpp.obj
+
+Stats.i: Stats.cpp.i
+
+.PHONY : Stats.i
+
+# target to preprocess a source file
+Stats.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Stats.cpp.i
+.PHONY : Stats.cpp.i
+
+Stats.s: Stats.cpp.s
+
+.PHONY : Stats.s
+
+# target to generate assembly for a file
+Stats.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Stats.cpp.s
+.PHONY : Stats.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -163,6 +217,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... AIPO1
+	@echo ... Hero.obj
+	@echo ... Hero.i
+	@echo ... Hero.s
+	@echo ... Stats.obj
+	@echo ... Stats.i
+	@echo ... Stats.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

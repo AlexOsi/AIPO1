@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "AIPO1.exe.manifest"
   "AIPO1.lib"
   "AIPO1.pdb"
+  "CMakeFiles/AIPO1.dir/Hero.cpp.obj"
+  "CMakeFiles/AIPO1.dir/Stats.cpp.obj"
   "CMakeFiles/AIPO1.dir/main.cpp.obj"
 )
 
