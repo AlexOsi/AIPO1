@@ -1,0 +1,62 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/CLion Projects/AIPO1/Hero.cpp
+Hero.h
+D:/CLion Projects/AIPO1/Hero.h
+
+D:/CLion Projects/AIPO1/Hero.h
+Stats.h
+D:/CLion Projects/AIPO1/Stats.h
+iostream
+-
+
+D:/CLion Projects/AIPO1/Mage.cpp
+Mage.h
+D:/CLion Projects/AIPO1/Mage.h
+
+D:/CLion Projects/AIPO1/Mage.h
+Hero.h
+D:/CLion Projects/AIPO1/Hero.h
+
+D:/CLion Projects/AIPO1/Mercenary.cpp
+Mercenary.h
+D:/CLion Projects/AIPO1/Mercenary.h
+
+D:/CLion Projects/AIPO1/Mercenary.h
+Hero.h
+D:/CLion Projects/AIPO1/Hero.h
+
+D:/CLion Projects/AIPO1/Paladin.cpp
+Paladin.h
+D:/CLion Projects/AIPO1/Paladin.h
+
+D:/CLion Projects/AIPO1/Paladin.h
+Hero.h
+D:/CLion Projects/AIPO1/Hero.h
+
+D:/CLion Projects/AIPO1/Stats.h
+string
+-
+
+D:/CLion Projects/AIPO1/main.cpp
+iostream
+-
+vector
+-
+string
+-
+memory
+-
+Mage.h
+D:/CLion Projects/AIPO1/Mage.h
+Paladin.h
+D:/CLion Projects/AIPO1/Paladin.h
+Mercenary.h
+D:/CLion Projects/AIPO1/Mercenary.h
+

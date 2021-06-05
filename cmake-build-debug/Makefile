@@ -154,32 +154,86 @@ Hero.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Hero.cpp.s
 .PHONY : Hero.cpp.s
 
-Stats.obj: Stats.cpp.obj
+Mage.obj: Mage.cpp.obj
 
-.PHONY : Stats.obj
+.PHONY : Mage.obj
 
 # target to build an object file
-Stats.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Stats.cpp.obj
-.PHONY : Stats.cpp.obj
+Mage.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Mage.cpp.obj
+.PHONY : Mage.cpp.obj
 
-Stats.i: Stats.cpp.i
+Mage.i: Mage.cpp.i
 
-.PHONY : Stats.i
+.PHONY : Mage.i
 
 # target to preprocess a source file
-Stats.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Stats.cpp.i
-.PHONY : Stats.cpp.i
+Mage.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Mage.cpp.i
+.PHONY : Mage.cpp.i
 
-Stats.s: Stats.cpp.s
+Mage.s: Mage.cpp.s
 
-.PHONY : Stats.s
+.PHONY : Mage.s
 
 # target to generate assembly for a file
-Stats.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Stats.cpp.s
-.PHONY : Stats.cpp.s
+Mage.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Mage.cpp.s
+.PHONY : Mage.cpp.s
+
+Mercenary.obj: Mercenary.cpp.obj
+
+.PHONY : Mercenary.obj
+
+# target to build an object file
+Mercenary.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Mercenary.cpp.obj
+.PHONY : Mercenary.cpp.obj
+
+Mercenary.i: Mercenary.cpp.i
+
+.PHONY : Mercenary.i
+
+# target to preprocess a source file
+Mercenary.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Mercenary.cpp.i
+.PHONY : Mercenary.cpp.i
+
+Mercenary.s: Mercenary.cpp.s
+
+.PHONY : Mercenary.s
+
+# target to generate assembly for a file
+Mercenary.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Mercenary.cpp.s
+.PHONY : Mercenary.cpp.s
+
+Paladin.obj: Paladin.cpp.obj
+
+.PHONY : Paladin.obj
+
+# target to build an object file
+Paladin.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Paladin.cpp.obj
+.PHONY : Paladin.cpp.obj
+
+Paladin.i: Paladin.cpp.i
+
+.PHONY : Paladin.i
+
+# target to preprocess a source file
+Paladin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Paladin.cpp.i
+.PHONY : Paladin.cpp.i
+
+Paladin.s: Paladin.cpp.s
+
+.PHONY : Paladin.s
+
+# target to generate assembly for a file
+Paladin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AIPO1.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\AIPO1.dir\Paladin.cpp.s
+.PHONY : Paladin.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -220,9 +274,15 @@ help:
 	@echo ... Hero.obj
 	@echo ... Hero.i
 	@echo ... Hero.s
-	@echo ... Stats.obj
-	@echo ... Stats.i
-	@echo ... Stats.s
+	@echo ... Mage.obj
+	@echo ... Mage.i
+	@echo ... Mage.s
+	@echo ... Mercenary.obj
+	@echo ... Mercenary.i
+	@echo ... Mercenary.s
+	@echo ... Paladin.obj
+	@echo ... Paladin.i
+	@echo ... Paladin.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

@@ -5,10 +5,25 @@ CMakeFiles\AIPO1.dir\Hero.cpp.obj: ..\Hero.cpp
 CMakeFiles\AIPO1.dir\Hero.cpp.obj: ..\Hero.h
 CMakeFiles\AIPO1.dir\Hero.cpp.obj: ..\Stats.h
 
-CMakeFiles\AIPO1.dir\Stats.cpp.obj: ..\Stats.cpp
-CMakeFiles\AIPO1.dir\Stats.cpp.obj: ..\Stats.h
+CMakeFiles\AIPO1.dir\Mage.cpp.obj: ..\Hero.h
+CMakeFiles\AIPO1.dir\Mage.cpp.obj: ..\Mage.cpp
+CMakeFiles\AIPO1.dir\Mage.cpp.obj: ..\Mage.h
+CMakeFiles\AIPO1.dir\Mage.cpp.obj: ..\Stats.h
+
+CMakeFiles\AIPO1.dir\Mercenary.cpp.obj: ..\Hero.h
+CMakeFiles\AIPO1.dir\Mercenary.cpp.obj: ..\Mercenary.cpp
+CMakeFiles\AIPO1.dir\Mercenary.cpp.obj: ..\Mercenary.h
+CMakeFiles\AIPO1.dir\Mercenary.cpp.obj: ..\Stats.h
+
+CMakeFiles\AIPO1.dir\Paladin.cpp.obj: ..\Hero.h
+CMakeFiles\AIPO1.dir\Paladin.cpp.obj: ..\Paladin.cpp
+CMakeFiles\AIPO1.dir\Paladin.cpp.obj: ..\Paladin.h
+CMakeFiles\AIPO1.dir\Paladin.cpp.obj: ..\Stats.h
 
 CMakeFiles\AIPO1.dir\main.cpp.obj: ..\Hero.h
+CMakeFiles\AIPO1.dir\main.cpp.obj: ..\Mage.h
+CMakeFiles\AIPO1.dir\main.cpp.obj: ..\Mercenary.h
+CMakeFiles\AIPO1.dir\main.cpp.obj: ..\Paladin.h
 CMakeFiles\AIPO1.dir\main.cpp.obj: ..\Stats.h
 CMakeFiles\AIPO1.dir\main.cpp.obj: ..\main.cpp
 

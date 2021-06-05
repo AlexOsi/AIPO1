@@ -4,7 +4,9 @@ file(REMOVE_RECURSE
   "AIPO1.lib"
   "AIPO1.pdb"
   "CMakeFiles/AIPO1.dir/Hero.cpp.obj"
-  "CMakeFiles/AIPO1.dir/Stats.cpp.obj"
+  "CMakeFiles/AIPO1.dir/Mage.cpp.obj"
+  "CMakeFiles/AIPO1.dir/Mercenary.cpp.obj"
+  "CMakeFiles/AIPO1.dir/Paladin.cpp.obj"
   "CMakeFiles/AIPO1.dir/main.cpp.obj"
 )
 

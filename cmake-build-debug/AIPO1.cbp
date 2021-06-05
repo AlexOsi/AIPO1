@@ -90,7 +90,22 @@
 		<Unit filename="D:/CLion Projects/AIPO1/Hero.h">
 			<Option target="AIPO1"/>
 		</Unit>
-		<Unit filename="D:/CLion Projects/AIPO1/Stats.cpp">
+		<Unit filename="D:/CLion Projects/AIPO1/Mage.cpp">
+			<Option target="AIPO1"/>
+		</Unit>
+		<Unit filename="D:/CLion Projects/AIPO1/Mage.h">
+			<Option target="AIPO1"/>
+		</Unit>
+		<Unit filename="D:/CLion Projects/AIPO1/Mercenary.cpp">
+			<Option target="AIPO1"/>
+		</Unit>
+		<Unit filename="D:/CLion Projects/AIPO1/Mercenary.h">
+			<Option target="AIPO1"/>
+		</Unit>
+		<Unit filename="D:/CLion Projects/AIPO1/Paladin.cpp">
+			<Option target="AIPO1"/>
+		</Unit>
+		<Unit filename="D:/CLion Projects/AIPO1/Paladin.h">
 			<Option target="AIPO1"/>
 		</Unit>
 		<Unit filename="D:/CLion Projects/AIPO1/Stats.h">

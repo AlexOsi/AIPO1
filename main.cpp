@@ -1,130 +1,166 @@
-#include "Hero.h"
 #include <iostream>
 #include <vector>
 #include <string>
-#include <exception>
+#include <memory>
+#include "Mage.h"
+#include "Paladin.h"
+#include "Mercenary.h"
 
-enum class Attacks {
-    kDownAttack,
-    kMiddleAttack,
-    kUpAttack
+enum class Heroes {
+    kMage,
+    kPaladin,
+    kMercenary,
+    kUnknown
 };
 
-class Mage : public Hero {
-public:
-    explicit Mage() = default;
-    explicit Mage(const Stats& stats)
-        : Hero(stats)
-    {}
-    explicit Mage(Stats&& stats)
-        : Hero(std::move(stats))
-    {}
-
-    int upAttack() override {
-        std::cout << "Throw fireball!" << std::endl;
-        return baseDamage;
-    }
-    int middleAttack() override {
-        int damage;
-        if (m_spellPower == 0) {
-            damage = baseDamage;
-            std::cout << "Spell power is over!" << std::endl;
-        }
-        else {
-            damage = baseDamage + 10;
-            std::cout << "Adding 10 spell power to attack!" << std::endl;
-            m_spellPower -= 10;
-        }
-        return damage;
-    }
-    int downAttack() override {
-
-        if (m_percentDamageReduction < 75) {
-            m_percentDamageReduction += 25;
-            std::cout << "Spell: fire shield! Not getting " << m_percentDamageReduction
-            << " % of your attack!" << std::endl;
-        }
-        else {
-            std::cout << "Already not getting 75% of attack from the fire shield!" << std::endl;
-        }
-        return 0;
+std::shared_ptr<Hero> factoryHero(std::pair<Heroes, std::string> playerData) {
+    switch(playerData.first) {
+        case Heroes::kMage:
+            return std::make_shared<Mage>(std::move(playerData.second));
+        case Heroes::kPaladin:
+            return std::make_shared<Paladin>(std::move(playerData.second));
+        case Heroes::kMercenary:
+            return std::make_shared<Mercenary>(std::move(playerData.second));
+        default:
+            return {};
     }
 
-    int ultimate() override {
-        std::cout << "Destroy you with fiery rain!" << std::endl;
-        return baseDamage * 5;
+}
+
+std::pair<Heroes, std::string> inputPlayerData() {
+    std::pair<Heroes, std::string> playerData;
+    static int playerNum = 1;
+    if (playerNum == 1) {
+        std::cout << "First player: " << std::endl;
+    }
+    else if (playerNum == 2) {
+        std::cout << "Second player: " << std::endl;
+    }
+    std::cout << "Choose your Hero: Mage (enter 0), Paladin (enter 1) or Mercenary (enter 2)!" << std::endl;
+    int heroNum;
+    std::cin >> heroNum;
+    playerData.first = static_cast<Heroes>(heroNum);
+    std::cout << "What is your name?" << std::endl;
+    std::cin >> playerData.second;
+    return playerData;
+}
+
+void doAttack(std::shared_ptr<Hero>& heroDoingAttack,
+                 std::shared_ptr<Hero>& heroReceivingAttack,
+                 const Actions currentAttack) {
+    if (currentAttack == Actions::kUpAttack) {
+        heroReceivingAttack->receiveDamage(heroDoingAttack->upAttack());
+    }
+    else if (currentAttack == Actions::kMiddleAttack) {
+        heroReceivingAttack->receiveDamage(heroDoingAttack->middleAttack());
+    }
+    else if (currentAttack == Actions::kDownAttack) {
+        heroReceivingAttack->receiveDamage(heroDoingAttack->downAttack());
     }
 
-    void receiveDamage(int damage) override {
-        if (m_percentDamageReduction != 0) {
-            damage -= static_cast<int>(m_percentDamageReduction * 0.01 * damage);
-        }
-        Hero::receiveDamage(damage);
-    }
+}
 
-private:
-    int baseDamage = m_stats.getMagic();
-    int m_spellPower = 100;
-    int m_percentDamageReduction = 0;
-};
+bool isAttack(Actions action) {
+    if (action == Actions::kDownAttack || action == Actions::kMiddleAttack || action == Actions::kUpAttack) {
+        return true;
+    }
+    return false;
+}
 
-class Paladin : public Hero {
-public:
-    explicit Paladin() = default;
-    explicit Paladin(const Stats& stats)
-        : Hero(stats)
-    {}
-    explicit Paladin(Stats&& stats)
-        : Hero(std::move(stats))
-    {}
-    int upAttack() override {
-        std::cout << "Ore sword strike!" << std::endl;
-        int damage;
-        if (countDoubleDamage != 0) {
-            damage = baseDamage * 2;
-            countDoubleDamage--;
-            std::cout << "Double damage!" << std::endl;
-        }
-        else {
-            damage = baseDamage;
-        }
-        return damage;
-    }
-    int middleAttack() override {
-        std::cout << "Using magic! Get blinded by glowing light!" << std::endl;
-        return baseDamage*m_stats.getMagic();
-    }
-    int downAttack() override {
-        std::cout << "Power of king with me! Next 3 attacks with double damage!" << std::endl;
-        countDoubleDamage = 3;
-        return 0;
-    }
-    int ultimate() override {
-        std::cout << "God heals me! Plus 50 more points to my health!" << std::endl;
-        std::cout << m_stats.getHealth() << std::endl;
-        int newHealth = m_stats.getHealth() + 30;
-        if (newHealth > 100) {
-            newHealth = 100;
-        }
-        m_stats.setHealth(newHealth);
-        std::cout << m_stats.getHealth() << std::endl;
-        return 0;
-    }
+void printGameOverMessage(const std::string& winnerName) {
+    std::cout << winnerName << " win! " << std::endl;
+}
 
+void printRules() {
+    std::cout << "Everyone has 3 attacks: up (enter 0), middle (enter 1) and down (enter 2)! "
+                 "You can make block and try to guess enemy's action "
+                 "To do this, enter 3 and enter enemy's action (0-3)!" << std::endl;
+}
 
-private:
-    int baseDamage = m_stats.getStrength();
-    int countDoubleDamage = 0;
-};
+void printTurnMessage(const std::string& name, const int health) {
+    std::cout << name << "'s turn: " << std::endl;
+    std::cout << "HP of your hero: " << health << std::endl;
+}
+
+Actions inputAction() {
+    int actionNum;
+    std::cin >> actionNum;
+    return static_cast<Actions>(actionNum);
+}
+
+bool isGameOver(std::pair<bool, bool> isPlayersAlive) {
+    if (!isPlayersAlive.first || !isPlayersAlive.second) {
+        return true;
+    }
+    return false;
+}
+
+std::string getWinnerName(const std::pair<bool, bool> isPlayersAlive,
+                          const std::pair<std::string, std::string>& namesPlayers) {
+    if (!isPlayersAlive.first) {
+        return namesPlayers.second;
+    }
+    else {
+        return namesPlayers.first;
+    }
+}
 
 int main() {
-    Paladin A;
-    try {
-        Stats stats{50,5,5,4,5,"s"};
-    }
-    catch (const std::exception& ex) {
-        std::cout << ex.what();
-    }
+    /*
+     * Нужно задавать тип героя (встроить enum type внутрь класса и выводить название)
+     * */
+    std::pair<std::pair<Heroes, std::string>,
+            std::pair<Heroes, std::string>> playersData{inputPlayerData(), inputPlayerData()}; // Hero type and Name
 
+    std::pair<std::shared_ptr<Hero>,
+            std::shared_ptr<Hero>> players {factoryHero(playersData.first), factoryHero(playersData.second)};
+
+    printRules();
+
+    int turn = 0;
+    Actions guessAction = Actions::kNone;
+    // game
+    while (true) {
+        if (isGameOver({ players.first->isAlive(), players.second->isAlive() })) {
+            std::string winnerName = getWinnerName({players.first->isAlive(), players.second->isAlive()},
+                                                   {players.first->getName(), players.second->getName()});
+            printGameOverMessage(winnerName);
+            break;
+        }
+
+        bool isTurnFirstPlayer = (turn % 2 == 0);
+        if (isTurnFirstPlayer) {
+            printTurnMessage(players.first->getName(), players.first->getHealth());
+        } else {
+            printTurnMessage(players.second->getName(), players.second->getHealth());
+        }
+
+        auto action = inputAction();
+        if (isAttack(action)) {
+            if (isTurnFirstPlayer) {
+                doAttack(players.first, players.second, action);
+            } else {
+                doAttack(players.second, players.first, action);
+            }
+        }
+
+        if (guessAction != Actions::kNone) {
+            if (action == guessAction) {
+                std::cout << "Attack is canceled! Enemy guessed it!" << std::endl;
+                if (isTurnFirstPlayer) {
+                    players.first->receiveDamage(players.second->ultimate());
+                } else {
+                    players.second->receiveDamage(players.first->ultimate());
+                }
+            }
+        }
+        if (action == Actions::kBlock) {
+            int guessActionNum;
+            std::cin >> guessActionNum;
+            guessAction = static_cast<Actions>(guessActionNum);
+        }
+
+        turn++;
+    }
     return 0;
 }
